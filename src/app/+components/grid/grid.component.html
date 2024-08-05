@@ -1,0 +1,22 @@
+<table>
+    <tr>
+        @for (item of columns; track $index) {
+            <th>{{item}}</th>
+        }
+        <th></th>
+        
+    </tr>
+    @for (row of data; track $index) {
+        <tr>
+           @for (col of columns; track $index) {
+            <td>{{row[col]}}</td>
+        }
+        <td>
+            <button (click)="remove(row)">❌</button>
+            <button (click)="edit(row)">📝</button>
+        </td>
+        </tr>
+    }
+   
+</table>
+
